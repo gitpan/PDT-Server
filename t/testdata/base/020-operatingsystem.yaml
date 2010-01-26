@@ -1,0 +1,26 @@
+---
+1001:
+  id: 1001
+  name: GNU-Linux
+  version: 10.1
+  distribution: Gentoo
+1002:
+  id: 1002
+  name: GNU-Linux
+  version: 9.10
+  distribution: Ubuntu
+1003:
+  id: 1003
+  name: FreeBSD
+  version: 7.2
+  distribution: ~
+1004:
+  id: 1004
+  name: Windows XP
+  version: 1
+  distribution: ~
+1005:
+  id: 1005
+  name: Windows 7
+  version: 1
+  distribution: ~

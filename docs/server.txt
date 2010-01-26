@@ -1,0 +1,43 @@
+Account - For managing a user account and logging in
+Register - For registering a host
+Request - For issuing a request
+Fetch - For a host to take on a request
+Cron - Cleanup tasks
+Answer - Respond to a request
+Root - Landing
+Stats - Information
+
+Each controller when given no arguments will provide the list of possible
+arguments, and when applicable their possible values. The one argument that is
+an exception is the 'type' argument which specifies what data type the
+arguments should be returned in.
+
+The 'type' argument defaults to html, which returns a browser-viewable form.
+The PDT client/host applications will use this to request data in either JSON
+or another serialization.
+
+Every controller can accept login credentials, but does not provide them in
+the argument list. This allows the client/host to login when posting each http
+request.
+
+The html forms will be auto-generated and VERY basic.
+
+There will be a cron controller that takes care of regular tasks. Only one
+cron should be running at a time, that is if cron is still running and the
+controller is hit again it will not be running twice. Cron tasks include
+expiring anonymous hosts and recalculating request weight.
+
+The account controller will be used to register a user, login, and manage the
+users list of registered hosts. *This controller will not have a CLI*
+
+The register controller will be used to register a host. If logged in, or if
+cridentials are included, the host will be added to the user, otherwise it
+will be anonymous and expire after a period with no checkins.
+
+The fetch controller is used by a host and provides the host with a request to
+process. Every time a host hits this controller a 'checkin' will be recorded.
+It may be necessary to have a host checkin regularly when processing a
+request, there will be a 'checkin' argument for that. This argument will
+prevent assignment of a new task. *This controller cannot be viewed in html*
+
+The answer controller is used by the host to respond to a request.

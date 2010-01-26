@@ -1,0 +1,15 @@
+<%ARGS>
+$controller
+</%ARGS>
+
+<%INIT>
+use Data::Dumper;
+my $x = Dumper( $controller );
+</%INIT>
+
+<& /global/header.html &>
+<pre>
+<% $x %>
+</pre>
+<& /global/footer.html &>
+

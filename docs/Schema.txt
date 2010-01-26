@@ -1,0 +1,54 @@
+--Account:
+--
+-- * Email address
+-- * Registration date
+-- * Password hash
+--
+--Host:
+--
+-- * linked to account (optional)
+-- * Last checkin stamp
+-- * registration date
+-- * Architecture
+-- * Operating system
+--
+--Host features
+--
+-- * Host
+-- * Feature
+--
+--Architecture:
+--
+-- * Name (x86, x86_64, etc.)
+--
+--Operating system:
+--
+-- * Name
+-- * Version
+-- * Distribution
+--
+--Feature:
+--
+-- * Name
+--
+--Request:
+--
+-- * Account (optional)
+-- * Date
+-- * Assigned (host)
+-- * Architecture
+-- * Operating system
+--
+--Request Features:
+--
+-- * Request
+-- * Feature
+--
+--Answer:
+--
+-- * Request
+-- * Host
+-- * STDOUT
+-- * STDERR
+-- * TAP Results
+-- * Date

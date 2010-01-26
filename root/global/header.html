@@ -1,0 +1,36 @@
+<%args>
+$session
+</%args>
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/pdt.css" />
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/pdt.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="user_menu">
+%           if ( my $id = $session->{logged_in} ){
+                <a href="/account"><% PDT::Server::Account->new( id => $id )->login %></a>
+                &mdash;
+                <a href="/logout">logout</a>
+%           }
+%           else {
+                <a href="/login">login</a>
+                &mdash;
+                <a href="/register">register</a>
+%           }
+        </div>
+
+        <h1>Perl Development and Testing Server (PDT)</h1>
+        <div id="navigation">
+            <ul id="nav_list">
+                <li><a href="/request">Request</a></li>
+                <li><a href="/host">Host</a></li>
+                <li><a href="/stats">Statistics</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="content">
+        <div id="main">

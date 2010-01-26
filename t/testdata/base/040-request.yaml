@@ -1,0 +1,26 @@
+---
+1001:
+  id: 1001
+  issued: 2010-01-17 05:00:00
+  assigned: 1001
+  architecture_id: 1001
+  operatingsystem_id: 1001
+  source_uri: "test://1001"
+  plugin_id: 1007
+  account_id: 1001
+1002:
+  id: 1002
+  issued: 2010-01-16 00:00:00
+  assigned: ~
+  architecture_id: 1001
+  operatingsystem_id: 1001
+  source_uri: "test://1002"
+  plugin_id: 1007
+1003:
+  id: 1003
+  issued: 2010-01-16 00:00:00
+  assigned: ~
+  architecture_id: 1003
+  operatingsystem_id: 1004
+  source_uri: "test://1003"
+  plugin_id: 1007

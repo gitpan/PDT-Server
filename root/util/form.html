@@ -1,0 +1,50 @@
+<%ARGS>
+$fields
+$values
+</%ARGS>
+
+<%INIT>
+</%INIT>
+
+<form method="post">
+
+% if ( $values->errors ){
+    <div class="error">
+        <ul>
+%           for my $error ( @{ $values->errors }) {
+                <li><% $error %></li>
+%           }
+        </ul>
+    </div>
+% }
+
+% for my $set ( @$fields ){
+%   my @classes = (
+%       $set->{ -optional }
+%           ? (
+%              'optional',
+%              $set->{ -optional }->[1]
+%               ? $values->{ $set->{ -optional }->[0] } ? 'optional-on' : 'optional-off'
+%               : $values->{ $set->{ -optional }->[0] } ? 'optional-off' : 'optional-on'
+%             )
+%           : 'required'
+%   );
+    <div id="<% $set->{ -name } %>" class="<% join( ' ', @classes ) %>">
+        <dl>
+%          for my $name ( grep { $_ !~ m/^-/ } @{ $set->{ -fields }} ) {
+%              my $def = $set->{ $name } || 'text';
+%              unless ( ref( $def ) and ref( $def ) eq 'HASH' ) {
+%                 $def = { type => $def } unless ref $def;
+%                 $def = { type => $def->[0], attributes => $def->[2] } unless ref $def eq 'HASH';
+%                 $def->{ label } = join( ' ', map { ucfirst(lc( $_ ))} split( /[\s_]+/, $name ));
+%              }
+%              my $comp = "/util/form/" . $def->{ type } . ".html";
+               <& $comp, name => $name, def => $def, values => $values &>
+%          }
+        </dl>
+    </div>
+% }
+
+<input type="submit" />
+
+</form>

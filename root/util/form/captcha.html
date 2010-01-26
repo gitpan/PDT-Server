@@ -1,0 +1,23 @@
+<%ARGS>
+$values
+$name
+$def
+</%ARGS>
+
+<dt class="captcha">
+Please Type what you see in the box.
+</dt>
+
+<dd class="captcha">
+    <input
+        type="text"
+        name="<% $name %>"
+        id="field_<% $name %>"
+%       if ( my $attr = $def->{ attributes } ) {
+%           while ( my ( $key, $val ) = each %$attr ) {
+                <% $key %>="<% $val %>"
+%           }
+%       }
+    >
+    <img src="/captcha" />
+</dd>

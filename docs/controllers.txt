@@ -1,0 +1,9 @@
+Account - For managing a user account and logging in
+Register - For registering a host
+Request - For issuing a request
+Fetch - For a host to take on a request
+Checkin - For a host to checkin
+Cron - Cleanup tasks
+Answer - Respond to a request
+Root - Landing
+Stats - Information

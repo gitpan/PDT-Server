@@ -1,0 +1,13 @@
+ * All users have a weight of 0 to start
+ * All requests have a weight of total servers over servers capable of meeting
+   the request.
+
+User wight is:
++0 when not registered
++4 Registered user
++4 per active host under user name (completed at least one request recently)
++2 per inactive host under user (that was hosting recently)
+
+Request weight is:
++(total/capable)  total servers over servers capable of meeting the request.
++(4 * age in minutes) Age weight

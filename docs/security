@@ -1,0 +1,19 @@
+Cpan testers currently have a security hole. That is that there is nothing to
+prevent anyone from uploading something like a spambot to cpan causing
+cpan-testers to send out spam. This problem is not so bad as most cpan-testers
+will stop a test that hangs or runs too long, and each upload is only tested
+once by a host.
+
+This problem is inherited by PDT. In order to keep problems at a minimum the
+following must be done:
+
+ * A user *must* register in order to make a request.
+ * User registration needs a capcha and email confirmation
+ * Users need to be limited to a maximum number of requests per platform/os per time period.
+ * Hosts must abort tests after a specific time 
+ * Failure to complete in a reasonable time is a test failure. (1 hour?)
+ * Host will refuse to run as root
+
+Hosts will be urged to secure their systems. Chroot jailed, firewalls to
+prevent net access to the testing user, etc. These things require platform
+specific tactics and require a wiki page.

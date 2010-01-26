@@ -1,0 +1,15 @@
+---
+1001:
+  id: 1001
+  email: acct1@example.com
+  password: password
+  registration: 2010-01-15 00:00:00
+  login: acct1
+  full_name: 'acct one'
+1002:
+  id: 1002
+  email: acct2@example.com
+  password: password
+  registration: 2010-01-16 00:00:00
+  login: acct2
+  full_name: 'acct two'

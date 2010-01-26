@@ -1,0 +1,24 @@
+<%ARGS>
+$title
+$session
+$values => undef
+$fields => undef
+$content => undef
+$content_path => undef
+</%ARGS>
+
+<%INIT>
+</%INIT>
+
+<& /global/header.html, session => $session &>
+    <h2><% $title %></h2>
+%   if( $content ){
+        <% $content %>
+%   }
+%   if( $content_path ){
+        <& $content_path, fields => $fields, values => $values &>
+%   }
+%   if( $fields ) {
+        <& /util/form.html, fields => $fields, values => $values &>
+%   }
+<& /global/footer.html &>

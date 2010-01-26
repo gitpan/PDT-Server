@@ -1,0 +1,8 @@
+---
+1001:
+  id: 1001
+  request_id: 1001
+  host_id: 1001
+  data: "Error: 12345"
+  success: 0
+  received: 2010-01-17 05:30:00
